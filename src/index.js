@@ -4,94 +4,45 @@ import './index.css';
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-function Welcome(props) {
-    return <h1>Hello, {props.name}</h1>
+class Clock extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state={date:new Date()};
+    }
+    componentDidMount() {
+        this.timerID=setInterval(()=>this.tick(),1000);
+    }
+    componentWillMount() {
+        clearInterval(this.timerID)
+    }
+    tick(){
+        this.setState({date:new Date()
+        });
+    }
+    render() {
+        return (
+            <div>
+                <h1>Hello, world!</h1>
+                <FormattedDate date={this.state.date} />
+            </div>
+        )
+    }
 }
-
-function App() {
+function FormattedDate(props){
+    return <h2>It is {props.date.toLocaleTimeString()}</h2>
+}
+function App(){
     return (
         <div>
-            <Welcome name="Sara"/>
-            <Welcome name="Cahal"/>
-            <Welcome name="Edite"/>
+        <Clock />
+    <Clock />
+    <Clock />
         </div>
     )
 }
-
-function formatDate(props) {
-    return (
-        <div>props</div>
-    )
-}
-
-function Comment(props) {
-    /* return(
-         <div className="Comment">
-            <div className="UserInfo">
-               <img className="Avatar"
-              src={props.user.avatarUrl}
-              alt={props.user.name}
-               />
-             <div className="UserInfo-name">
-                 {props.author.name}
-             </div>
-         </div>
-             <div className="Comment-text">
-                 {props.text}
-             </div>
-             <div className="Comment-date">
-                 {formatDate(props.date)}
-             </div>
-         </div>
-     )*/
-    return (
-        <div className="Comment">
-            <UserInfo user={props.author}/>
-            <div className="Comment-text">
-                {props.text}
-            </div>
-            <div className="Comment-date">
-                {formatDate(props.date)}
-            </div>
-        </div>
-    )
-
-}
-
-function UserInfo(props) {
-    return (
-        <div className="UserInfo">
-            <Avatar user={props.user}/>
-            <div className="UserInfo-name">
-                {props.author.name}
-            </div>
-        </div>
-    )
-}
-
-function Avatar(props) {
-    return (
-        <img className="Avatar"
-             src={props.user.avatarUrl}
-             alt={props.user.name}
-        />
-    )
-}
-
-//const element=<Welcome name={"Sara"} />
-/*function tick() {
-    const element = (
-        <div>
-            <h1> Hello, World!</h1>
-            <h2>It is {new Date().toLocaleTimeString()}.</h2>
-        </div>
-    )
-}*/
 ReactDOM.render(
-    /* <React.StrictMode>
-       <App />
-     </React.StrictMode>,*/
-    <App/>,
+
+    <App />,
     document.getElementById('root'));
 
 //setInterval(tick,1000);
