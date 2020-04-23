@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import {Toggle} from './Toggle'
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -42,7 +43,7 @@ function App(){
 }
 ReactDOM.render(
 
-    <App />,
+    <Toggle />,
     document.getElementById('root'));
 
 //setInterval(tick,1000);
