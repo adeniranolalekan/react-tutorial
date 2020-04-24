@@ -9,6 +9,7 @@ import * as serviceWorker from './serviceWorker';
 import listItems from "./List";
 import NumberList from "./List";
 import Blog from "./Blog";
+import NameForm from "./NameForm";
 
 class Clock extends React.Component {
     constructor(props) {
@@ -57,7 +58,8 @@ ReactDOM.render(
   //  <Greeting isLoggedIn={false}/>,
    // <Greeting isLoggedIn={true}/>,
   // <NumberList numbers={numbers}/>,
-    <Blog posts={posts} />,
+   // <Blog posts={posts} />,
+    <NameForm/>,
     document.getElementById('root'));
 
 //setInterval(tick,1000);
