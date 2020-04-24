@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Greeting from './Greeting'
 import {Toggle} from './Toggle'
+import LoginControl from "./LoginControl";
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -43,7 +45,10 @@ function App(){
 }
 ReactDOM.render(
 
-    <Toggle />,
+    //<Toggle />,
+  //  <Greeting isLoggedIn={false}/>,
+   // <Greeting isLoggedIn={true}/>,
+    <LoginControl />,
     document.getElementById('root'));
 
 //setInterval(tick,1000);
