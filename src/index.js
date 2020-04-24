@@ -6,6 +6,9 @@ import {Toggle} from './Toggle'
 import LoginControl from "./LoginControl";
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
+import listItems from "./List";
+import NumberList from "./List";
+import Blog from "./Blog";
 
 class Clock extends React.Component {
     constructor(props) {
@@ -43,12 +46,18 @@ function App(){
         </div>
     )
 }
+//const numbers =[1,2,3,4,5];
+const posts=[
+    {id: 1, title: 'Hello World', content: 'Welcome to learning React'},
+    {id: 2, title: 'Installation', content: 'You can install React from npm'}
+]
 ReactDOM.render(
 
     //<Toggle />,
   //  <Greeting isLoggedIn={false}/>,
    // <Greeting isLoggedIn={true}/>,
-    <LoginControl />,
+  // <NumberList numbers={numbers}/>,
+    <Blog posts={posts} />,
     document.getElementById('root'));
 
 //setInterval(tick,1000);
