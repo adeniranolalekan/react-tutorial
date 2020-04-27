@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Greeting from './Greeting'
-import {Toggle} from './Toggle'
-import LoginControl from "./LoginControl";
+import Greeting from './lessons/Greeting'
+import {Toggle} from './lessons/Toggle'
+import LoginControl from "./lessons/LoginControl";
 //import App from './App';
 import * as serviceWorker from './serviceWorker';
-import listItems from "./List";
-import NumberList from "./List";
-import Blog from "./Blog";
-import NameForm from "./NameForm";
-import TemperatureCalculator from "./TemperatureCalculator";
+import listItems from "./lessons/List";
+import NumberList from "./lessons/List";
+import Blog from "./lessons/Blog";
+import NameForm from "./lessons/NameForm";
+import TemperatureCalculator from "./lessons/TemperatureCalculator";
 
 class Clock extends React.Component {
     constructor(props) {
