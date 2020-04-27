@@ -11,6 +11,7 @@ import NumberList from "./lessons/List";
 import Blog from "./lessons/Blog";
 import NameForm from "./lessons/NameForm";
 import TemperatureCalculator from "./lessons/TemperatureCalculator";
+import FilterableProductTable from "./assignment/FilterableProductTable";
 
 class Clock extends React.Component {
     constructor(props) {
@@ -49,10 +50,18 @@ function App(){
     )
 }
 //const numbers =[1,2,3,4,5];
-const posts=[
+/*const posts=[
     {id: 1, title: 'Hello World', content: 'Welcome to learning React'},
     {id: 2, title: 'Installation', content: 'You can install React from npm'}
-]
+]*/
+const PRODUCTS=[
+    {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+    {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+    {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+    {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+    {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+    {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+];
 ReactDOM.render(
 
     //<Toggle />,
@@ -60,7 +69,8 @@ ReactDOM.render(
    // <Greeting isLoggedIn={true}/>,
   // <NumberList numbers={numbers}/>,
    // <Blog posts={posts} />,
-    <TemperatureCalculator/>,
+   // <TemperatureCalculator/>,
+    <FilterableProductTable products={PRODUCTS}/>,
     document.getElementById('root'));
 
 //setInterval(tick,1000);
